@@ -15,6 +15,7 @@ exclude:
   - .DS_Store
   - store
   - .jekyll-cache
+  - .vscode
 
 # Permalinks configuration
 permalink: pretty

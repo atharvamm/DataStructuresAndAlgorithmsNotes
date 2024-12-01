@@ -1,0 +1,32 @@
+---
+title: "Best Time to Buy and Sell Stock"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock">Best Time to Buy and Sell Stock</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>The problem requires that we buy low and sell high. To work in that direction we need to ensure any approach we have first has an operation to buy and then compare and sell.</p>
+<p>1. One approach could be to just try all combinations where we get the second number and then check what gives us the best results.</p>
+<p>2. Second approach would be to use dynamic programming to check all cases and then give results.</p>
+<p>3. An efficient way of doing this would also be using a two-pointer like approach. In this appraoch the first pointer keeps moving but the second one only moves when we change the condtion for buying or buying price.</p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/BestTimetoBuyandSellStock.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>In DP Problems the best way to write solution is to write conditons and all possible cases and see if our code is solving that.</li>
+    <li>While handling two pointer problems it is important to remember that pointers can move at different speeds.</li>
+    <li>For two pointer problems we can start differennt ways: Both starting from left, both starting from right, both starting from middle and expanding window, both starting from side and coming in.</li>
+  </ul>
