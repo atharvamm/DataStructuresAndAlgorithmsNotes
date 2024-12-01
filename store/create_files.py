@@ -84,7 +84,7 @@ elif MODE == 2:
 
     result_txt = ""
     for result in sorted(results, key = lambda x: x["fname"]):
-        result_txt += '''<li><a href="../topics/{}/index.html">{}</a></li>'''.format(result["fname"], result["title"])
+        result_txt += '''<li><a href="topics/{}/index.html">{}</a></li>'''.format(result["fname"], result["title"])
         result_txt += "\n"
 
     with open(os.path.join(store_dir,"links.txt"), 'w', encoding='utf-8') as f:
