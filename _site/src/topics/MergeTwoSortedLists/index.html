@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Two Sorted Lists</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/merge-two-sorted-lists">Merge Two Sorted Lists</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>In this problem we are given two sorted linked lists and we are supposed to merge them. There are two approaches to do this. </p>
+<p>In the first approach we extract all the nodes of each linked list to a list and then compare and add them to make a new list. We then use this new list to create a new linked list by changing the next element based on their index in the list.</p>
+<p>A memory efficient way to do this would be to first create a dummy head and then just move the pointer for this new head by one step based on which ever node element has lesser value.</p>
+<p></p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+from help import generatelinkedlistfromlist, view_linked_list
+from typing import Optional
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+class Solution:
+    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+
+        dummy = ListNode()
+        head = dummy
+        while list1 and list2:
+            if list1.val < list2.val:
+                dummy.next = list1
+                list1 = list1.next
+            else:
+                dummy.next = list2
+                list2 = list2.next
+            dummy = dummy.next
+        
+        while list1:
+            dummy.next = list1
+            list1 = list1.next
+            dummy = dummy.next
+
+        while list2:
+            dummy.next = list2
+            list2 = list2.next
+            dummy = dummy.next
+
+        return head.next
+
+
+obj = Solution()
+lists = [[[1,2,4], [1,3,4]], [[], []], [[], [0]]]
+
+for ele_list in lists:
+    ele_list = [generatelinkedlistfromlist(ele_list[0]), generatelinkedlistfromlist(ele_list[1])]
+    view_linked_list(obj.mergeTwoLists(*ele_list))
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li> For linked list problems check if there is a way to move the head element by one element at a time this can give a more memory efficient solution. Also it helps to create a dummy node to create a new list.</li>
+    <li></li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

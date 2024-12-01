@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Time to Buy and Sell Stock</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock">Best Time to Buy and Sell Stock</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>The problem requires that we buy low and sell high. To work in that direction we need to ensure any approach we have first has an operation to buy and then compare and sell.</p>
+<p>1. One approach could be to just try all combinations where we get the second number and then check what gives us the best results.</p>
+<p>2. Second approach would be to use dynamic programming to check all cases and then give results.</p>
+<p>3. An efficient way of doing this would also be using a two-pointer like approach. In this appraoch the first pointer keeps moving but the second one only moves when we change the condtion for buying or buying price.</p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+from typing import List
+
+class Solution:
+    def maxProfitDP(self, prices: List[int]) -> int:
+        if len(prices) < 2:
+            return 0
+        def recurse(index = 0,buy = 0):
+            if index == len(prices) - 1:
+                if buy == 0:
+                    return 0
+                return prices[len(prices) - 1]
+            
+            if (index, buy) in profits:
+                return profits[(index, buy)]
+            
+            cur_profit = 0
+            if buy == 0:
+                cur_profit = max(
+                    -prices[index] + recurse(index+1,buy=1),
+                    0 + recurse(index+1,buy = 0)
+                )
+            else:
+                cur_profit = max(
+                    prices[index],
+                    0 + recurse(index+1, buy = 1)
+                )
+            
+
+            profits[(index,buy)] = cur_profit
+            return profits[(index,buy)]
+
+        profits = {}
+        recurse(0,0)
+        return profits[(0,0)]
+
+    def maxProfitArr(self, prices: List[int]) -> int:
+        bp = prices[0]
+        max_profit = 0
+
+        for i in range(1,len(prices)):
+            max_profit = max(max_profit, prices[i] - bp)
+            bp = min(bp,prices[i])
+        
+        return max_profit
+
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>In DP Problems the best way to write solution is to write conditons and all possible cases and see if our code is solving that.</li>
+    <li>While handling two pointer problems it is important to remember that pointers can move at different speeds.</li>
+    <li>For two pointer problems we can start differennt ways: Both starting from left, both starting from right, both starting from middle and expanding window, both starting from side and coming in.</li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

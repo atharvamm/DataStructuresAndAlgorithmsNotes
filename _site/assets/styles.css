@@ -1,0 +1,131 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+#sidebar {
+    width: 200px;
+    background: #f4f4f4;
+    padding: 15px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+#content {
+    margin-left: 220px;
+    padding: 20px;
+    flex: 1;
+}
+h2 {
+    margin-top: 0;
+}
+
+/* Responsive Image */
+.image-container {
+    text-align: left;
+    margin: 20px 0;
+}
+
+.responsive-image {
+    width: 75%;
+    height: auto;
+    max-width: 100%;
+    display: inline-block;
+}
+
+/* Reset default styles that might affect alignment */
+pre {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    background-color: #f4f4f4; /* Light gray background for code blocks */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 10px; /* Padding around the code */
+    overflow-x: auto; /* Horizontal scroll if code is too wide */
+    font-family: 'Courier New', Courier, monospace; /* Monospaced font for code */
+    white-space: pre-wrap; /* Preserve whitespace and allow wrapping */
+    word-wrap: break-word; /* Break long words if necessary */
+    text-align: left; /* Ensure text is aligned to the left */
+    display: block; /* Make sure the block displays as a block-level element */
+    width: 100%; /* Make sure it takes up the full width available */
+}
+
+/* Styling for code within pre */
+code {
+    color: #333; /* Dark gray color for text */
+    display: block; /* Make sure code is treated as a block-level element */
+}
+
+
+.nav-buttons {
+    margin-top: 20px;
+}
+.nav-buttons a {
+    text-decoration: none;
+    margin-right: 10px;
+}
+.nav-buttons button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.nav-buttons button:hover {
+    background-color: #00b3a4;
+}
+
+
+/* .nav-buttons {
+    margin-top: 20px;
+}
+.nav-buttons a {
+    margin-right: 10px;
+} */
+
+
+.highlight {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+.special-highlight {
+    color: green;
+    font-weight: bold;
+}
+
+/* Math */
+.math-display {
+    text-align: center;
+}
+/* Left-align block equations */
+.math-left {
+    text-align: left;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+#sidebar {
+    width: 100%;
+    position: relative;
+    box-shadow: none;
+}
+#content {
+    margin-left: 0;
+}
+.nav-buttons {
+    text-align: center;
+}
+.nav-buttons button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+}
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile-only {
+      display: none;
+    }
+  }

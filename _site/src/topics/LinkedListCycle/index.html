@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linked List Cycle</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/linked-list-cycle">Linked List Cycle</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+from typing import Optional
+from help import generatelinkedlistfromlist, view_linked_list
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, x):
+        self.val = x
+        self.next = None
+
+class Solution:
+    def hasCycle_old(self, head: Optional[ListNode]) -> bool:
+        visited = set()
+        while head:
+            visited.add(head)
+            head = head.next
+            if head in visited:
+                return True
+        return False
+
+    
+     
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li></li>
+    <li></li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

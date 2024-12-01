@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromic Substrings</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/palindromic-substrings">Palindromic Substrings</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>Question that might be worth confirming if asked in an interview would be :  Are duplicates allowed ? </p>
+<p>To find palindromes the best way would be to go at each index and find palidromes around that index. At each index there are two ways to do that: 1. Either a palindrome with odd length where the current index is the center or 2. A palindrome with even length where the current index and neighbour index are the center.</p>
+<p>Note: Try to remember this pattern, it is especially useful for questions on palindromes.</p>
+<p></p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+class Solution:
+    def countSubstrings(self, s: str) -> int:
+        def count_palindromes(start, end):
+            cnt = 0
+            while start > -1 and end < len(s) and s[start] == s[end]:
+                start -= 1
+                end += 1
+                cnt += 1
+            return cnt
+        
+        count = 0
+        for i in range(len(s)):
+            count = count + count_palindromes(i,i) + count_palindromes(i,i+1)
+        return count
+
+obj = Solution()
+print(obj.countSubstrings("abc"))
+print(obj.countSubstrings("aaa"))
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li></li>
+    <li></li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

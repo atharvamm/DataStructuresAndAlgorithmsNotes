@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest Consecutive Sequence</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/longest-consecutive-sequence/description/">Longest Consecutive Sequence</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>
+  The question is asking us to find the length of longest consecutive sequence. The meaning of consecutive means the difference between the elements will be 1. Also the array is unsorted and we have to solve the problem in O(n) time.
+</p><p>
+  Given that the array is unsorted and we have to solve in O(n) time, we can understand that we are not allowed to sort (Context: Sorting takes nlogn time.). Given the fact the only we can solve the problem is if we know for a given number is the previous number or the next number is in the array or not.</p><p>
+  For a number if we know that the next number is in the array we can keep doing until we reach a point where the next number is not in the array. If we keep track of the length till we reach this number, we will also get the length of max consecutive elements. 
+  </p><p>
+  To further optimize our solution, what we can do is only start at numbers which are the highest/largest in the chain of consecutive numbers. By doing this we wont have to find sub-chains of the longest sequence.
+</p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+from typing import List
+class Solution:
+    def longestConsecutive(self, nums: List[int]) -> int:
+        set_nums = set(nums)
+        max_con = 0
+        for num in nums:
+            if num + 1 not in set_nums:
+                cur_num = num
+                while cur_num in set_nums:
+                    cur_num -= 1
+                max_con = max(max_con, num - cur_num)        
+        return max_con 
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>Whenever we face a problem where we might need an event or value later, store the value in a dictionary/set so that you will not have to iterate through the array to see if the event happened in the past.</li>
+    <li>When working on sequence problems note where the sequence starts and where it ends, this will help eliminate repetitve work, where you accidentally traverse a sub-sequence.</li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

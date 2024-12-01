@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Container With Most Water</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="">Container With Most Water</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>So the question essentially asks us to find the max area bw two bars.</p>
+<p>To solve this we can look at all combinations and compare their areas and get max area.</p>
+<p>Another method would be to use two pointers. This is the tricky part, the usual method is to use two pointers from start, where one pointer follows another. Here we can see that it is helpful for the pointers to start from ends.</p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+from typing import List
+class Solution:
+    # Brute Force
+    def maxArea(self, height: List[int]) -> int:
+        max_area = 0
+        for i in range(len(height)):
+            for j in range(i+1,len(height)):
+                cur_area = min(height[j],height[i]) * (j - i)
+                max_area = max(cur_area, max_area)
+        
+        return max_area
+
+    # O(n) : Linear Time
+    def maxArea(self, height: List[int]) -> int:
+        start,end = 0,len(height) - 1
+        cur_area,max_area = 0,0
+
+        while start < end:
+            cur_area = min(height[end], height[start]) * (end - start)
+            max_area = max(max_area, cur_area)
+
+            if height[end] < height[start]:
+                end -= 1
+            else:
+                start += 1
+        
+        return max_area
+
+
+obj = Solution()
+print(obj.maxArea([1,8,6,2,5,4,8,3,7])) # 49
+print(obj.maxArea([1,8,6,2,5,4,3,8,7])) # 49
+print(obj.maxArea([1,1]))
+print(obj.maxArea([1,2,1])) # 2
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>For two pointers the most common variant is both starting from left, where one moves fast and other moves slow. If that doesn't fit the problem a second variant is to start from both ends and move towards the center. This is another variant where you can still test all.</li>
+    <li></li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

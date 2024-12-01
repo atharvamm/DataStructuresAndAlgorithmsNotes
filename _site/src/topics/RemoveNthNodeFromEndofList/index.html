@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove Nth Node From End of List</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list">Remove Nth Node From End of List</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+from help import generatelinkedlistfromlist, view_linked_list
+from typing import Optional
+
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        eles = []
+        while head:
+            eles.append(head)
+            head = head.next
+
+        if (len(eles) - n) == 0:
+            if len(eles) == 1:
+                return None
+            else:
+                return eles[1]
+        prev,after = (len(eles) - n) - 1, (len(eles) - n) + 1
+        if after < len(eles):
+            eles[prev].next = eles[after]
+        else:
+            eles[prev].next = None
+        
+
+        return eles[0]
+
+
+obj = Solution()
+lists = [([1,2,3,4,5], 2), ([1], 1), ([1,2], 1)]
+for ele_list in lists:
+    view_linked_list(obj.removeNthFromEnd(generatelinkedlistfromlist(ele_list[0]),ele_list[1]))
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li></li>
+    <li></li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

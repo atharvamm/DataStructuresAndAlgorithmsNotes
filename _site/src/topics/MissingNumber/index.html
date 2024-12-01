@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Missing Number</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/missing-number/">Missing Number</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>Any solution that checks the sum of two lists or compares the number in two lists should work.</p>
+<p></p>
+<p></p>
+<p></p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+from typing import List
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        n = len(nums)
+        return (n*(n+1))//2 - sum(nums)
+    
+class Solution:
+    def missingNumber(self, nums: List[int]) -> int:
+        expected_nums = list(range(len(nums) + 1))
+        ans = expected_nums[0]
+
+        for num in expected_nums[1:]:
+            ans ^= num
+
+        for num in nums:
+            ans ^= num
+
+        return ans
+        
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>If the result is after the same opeartion on all elements of the list, there might be a formula to solve it which reduces one part of the problem to O(1).</li>
+    <li>Since counting can also use dictionary.</li>
+    <li>Can use XOR to remove duplicate elements.</li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

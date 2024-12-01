@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valid Parentheses</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/valid-parentheses/description/">Valid Parentheses</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>The question wants us to check if all combinations of brackets are complete or not. The main challenge here is to ensure that we first check the inner brackets and then start looking for outer brackets.</p>
+<p>An efficient way of solving this problem would therefore be to first ignore the outer brackets and try solving the inner brackets. (Unless there are consecutive open-close pairs. In that case we will not have nested brackets)</p>
+<p>So we try to check from either left to right or right to left. If we find that there is an instant solution we remove the pair if not add it to a new list/stack to check later.</p>
+<p></p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+class Solution:
+    def isValid(self, s: str) -> bool:
+        s = list(s)
+        store = []
+        closing_chars = {"{":"}","(":")","[":"]"}
+
+        while s:
+            if len(store) and closing_chars.get(s[-1],"") == store[-1]:
+                    s.pop()
+                    store.pop()
+            else:
+                store.append(s.pop())
+        
+        if len(store):
+            return False
+        return True
+        
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>Use a stack when you have a chain of problems and some problem are nested. You can use the stack to hold the incomplete problem while you try to solve the nested problem.</li>
+    <li></li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

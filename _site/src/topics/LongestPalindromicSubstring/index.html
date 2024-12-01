@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest Palindromic Substring</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/longest-palindromic-substring/description/">Longest Palindromic Substring</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>We are given a string and we are supposed to find the longest palindromic substring.</p>
+<p>One way to do that is to go at each element and check what is the longest possible palindrome from there. A catch here is that each index there are 2 possible type of arrays. One where only the element at that index is part of the palindrome, the other where the neighbouring element is also part of the palindrome.</p>
+<p></p>
+<p></p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+class Solution:
+    def longestPalindrome(self, s: str) -> str:
+        def palindrome(start,end):
+            while start > -1 and end < len(s) and s[start] == s[end]:
+                start -= 1
+                end += 1
+            return s[start + 1:end],end - start - 1
+
+        max_len = 0
+        palindrome_string = ""
+        for i in range(len(s)):
+            string, length = palindrome(i,i)
+            if length > max_len:
+                palindrome_string = string
+                max_len = length
+            string, length = palindrome(i,i+1)
+            if length > max_len:
+                palindrome_string = string
+                max_len = length
+        
+        return palindrome_string
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li></li>
+    <li></li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Longest Substring Without Repeating Characters</title>
+    <link rel="stylesheet" href="../../../assets/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        <h2>Contents</h2>
+<ul>
+  <li><a href="#intro">Question</a></li>
+  <li><a href="#approach">Approach</a></li>
+  <li><a href="#code">Code</a></li>
+</ul>
+
+    </div>
+    <div id="content">
+        <h1 id="intro"><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>In this problem we need to find the substring with non-repeating characters. Since its a substring our goal is to ensure the elements in the array are consecutive.</p>
+<p>Given that elements should be consecutive means we can each element at a time and save it in a set. If the element already is in the set, we can shorten the string until that element is no longer in the set.</p>
+
+<h2 id="code">Code</h2>
+<pre><code>
+    
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        start,end = 0,0
+        characters = set()
+        max_len = 0
+
+        while end < len(s):
+            if s[end] in characters:
+                max_len = max(max_len, len(characters))
+
+                while s[end] in characters:
+                    characters.remove(s[start])
+                    start += 1
+            characters.add(s[end])
+            end += 1
+        max_len = max(max_len, len(characters))
+        return max_len
+    </code></pre>
+    
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>Use sets when you want to see if the element was seen before.</li>
+    <li>In problems when you have two pointers moving, first move the end pointer on the base test or the problem that you are trying to solve and if that fails start moving the start pointer until the sub-array/sub-sequence solves that problem. Do this until end reached the end of the array.</li>
+    <li></li>
+  </ul>
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+    <button onclick="location.href='../../blind75/index.html'">Previous</button>
+    <button onclick="location.href='../../../../index.html'">Next</button>
+</div>
+
+<div class="home-button" style="text-align: center; margin-top: 30px;">
+    <button onclick="location.href='../../../index.html'">Home</button>
+</div>
+
+
+
+    </div>
+</body>
+</html>
