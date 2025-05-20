@@ -1,0 +1,30 @@
+---
+title: "Longest Substring Without Repeating Characters"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>In this problem we need to find the substring with non-repeating characters. Since its a substring our goal is to ensure the elements in the array are consecutive.</p>
+<p>Given that elements should be consecutive means we can each element at a time and save it in a set. If the element already is in the set, we can shorten the string until that element is no longer in the set.</p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/LongestSubstringWithoutRepeatingCharacters.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>Use sets when you want to see if the element was seen before.</li>
+    <li>In problems when you have two pointers moving, first move the end pointer on the base test or the problem that you are trying to solve and if that fails start moving the start pointer until the sub-array/sub-sequence solves that problem. Do this until end reached the end of the array.</li>
+    <li></li>
+  </ul>

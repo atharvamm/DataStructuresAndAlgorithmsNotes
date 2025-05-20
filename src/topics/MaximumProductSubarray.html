@@ -1,0 +1,31 @@
+---
+title: "Maximum Product Subarray"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/maximum-product-subarray">Maximum Product Subarray</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>We want to find the subarray with max product. It is important to remember that a subarray means continuous elements so we have to ensure that out method takes that into account.</p>
+<p>The easiest method would be to first get all possible sub arrays and then check their product. But this ones time complexity would be of O(n^2)</p>
+<p>A better method would be to accumulate product from either sides and dump or restart in the worst case scenario cause as long as the numbers are not 0 they are contributing to the product. And if there is an odd number of negatives, since we accumulate from both directions it is likely we would have accumulated even number of negatives from either side of every odd number and seen its product.</p>
+<p></p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/MaximumProductSubarray.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>Cases where we have to find some sort of accumulated values for subarrays. The two most common methods are 1. Accumulate and then drop when condition changes, 2. Accumulate from both sides and then only drop when accumulating a particular element is detrimental. When solving problems based on accumulation these 2 methods usually help.</li>
+    <li></li>
+  </ul>

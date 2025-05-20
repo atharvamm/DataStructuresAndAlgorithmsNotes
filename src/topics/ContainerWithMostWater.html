@@ -1,0 +1,30 @@
+---
+title: "Container With Most Water"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="">Container With Most Water</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>So the question essentially asks us to find the max area bw two bars.</p>
+<p>To solve this we can look at all combinations and compare their areas and get max area.</p>
+<p>Another method would be to use two pointers. This is the tricky part, the usual method is to use two pointers from start, where one pointer follows another. Here we can see that it is helpful for the pointers to start from ends.</p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/ContainerWithMostWater.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>For two pointers the most common variant is both starting from left, where one moves fast and other moves slow. If that doesn't fit the problem a second variant is to start from both ends and move towards the center. This is another variant where you can still test all.</li>
+    <li></li>
+  </ul>

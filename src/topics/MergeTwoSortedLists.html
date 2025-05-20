@@ -1,0 +1,31 @@
+---
+title: "Merge Two Sorted Lists"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/merge-two-sorted-lists">Merge Two Sorted Lists</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>In this problem we are given two sorted linked lists and we are supposed to merge them. There are two approaches to do this. </p>
+<p>In the first approach we extract all the nodes of each linked list to a list and then compare and add them to make a new list. We then use this new list to create a new linked list by changing the next element based on their index in the list.</p>
+<p>A memory efficient way to do this would be to first create a dummy head and then just move the pointer for this new head by one step based on which ever node element has lesser value.</p>
+<p></p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/MergeTwoSortedLists.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li> For linked list problems check if there is a way to move the head element by one element at a time this can give a more memory efficient solution. Also it helps to create a dummy node to create a new list.</li>
+    <li></li>
+  </ul>

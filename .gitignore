@@ -1,0 +1,8 @@
+# Directories
+_site/*
+.jekyll-cache/
+**/**/store/
+.vscode/*
+
+# Files
+

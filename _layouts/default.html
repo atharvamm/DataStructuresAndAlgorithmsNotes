@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include header.html %}
+</head>
+<body>
+    <div id="sidebar" class="mobile-only">
+        {{ page.sidebar }}
+    </div>
+    <div id="content">
+        {{ content }}
+        {% include footer.html %}
+    </div>
+</body>
+</html>

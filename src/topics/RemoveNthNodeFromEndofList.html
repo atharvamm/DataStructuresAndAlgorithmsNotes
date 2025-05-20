@@ -1,0 +1,33 @@
+---
+title: "Remove Nth Node From End of List"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list">Remove Nth Node From End of List</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>Two approaches here:</p>
+<ul>
+  <li>Go through the linked list and store the elements in an array, then when we store the last element go back and check the element at nth position from last. Return the element at index 0. You can also add checks here to stop doing this process if there is just on element in the list and n = 1.</li>
+  <li>An easier method would be to have two pointers. Once pointer starting at dummy and the other at dummy+n. Now we keep moving the second pointer until it reaches the last element. Then when it reaches the last element, we just take the left pointer and changes it next to next of next element.</li>
+</ul>
+<p></p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/RemoveNthNodeFromEndofList.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>For linked list problems see if adding a dummy node in the beginning helps. If you added a dummy node and the problem requires you to return the head of linked list, return dummy.next and not head.</li>
+    <li>If you need to find the end of linked list in one pass in your problem and then do some operation, you can use two pointers. Try to create some sort of shift between the 2 pointers such that the second pointer reaches the end and then you can use that information to do some sort of operation.</li>
+  </ul>

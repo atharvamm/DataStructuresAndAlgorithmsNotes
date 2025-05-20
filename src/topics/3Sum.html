@@ -1,0 +1,29 @@
+---
+title: "Maximum Product Subarray"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/maximum-product-subarray/description/">Maximum Product Subarray</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>The most obvious answer would be to do a nested loop to try all possible combinations and then select the combinations based on the condition. But this combination will be very inefficient.</p>
+<p>Something more efficient would be to sort the list and then trying combinations from both ends.</p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/MaximumProductSubarray.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>When checking for combinations sorting the list helps, cause then you dont need to check all numbers especially in cases where two numbers are equal.</li>
+    <li>Find methods that can be used to contract window size, like here we keep moving the first element to the right to reduce the possible combinations we might need to check.</li>
+  </ul>

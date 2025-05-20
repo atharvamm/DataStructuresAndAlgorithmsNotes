@@ -1,0 +1,31 @@
+---
+title: "Valid Parentheses"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/valid-parentheses/description/">Valid Parentheses</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>The question wants us to check if all combinations of brackets are complete or not. The main challenge here is to ensure that we first check the inner brackets and then start looking for outer brackets.</p>
+<p>An efficient way of solving this problem would therefore be to first ignore the outer brackets and try solving the inner brackets. (Unless there are consecutive open-close pairs. In that case we will not have nested brackets)</p>
+<p>So we try to check from either left to right or right to left. If we find that there is an instant solution we remove the pair if not add it to a new list/stack to check later.</p>
+<p></p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/ValidParentheses.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>Use a stack when you have a chain of problems and some problem are nested. You can use the stack to hold the incomplete problem while you try to solve the nested problem.</li>
+    <li></li>
+  </ul>

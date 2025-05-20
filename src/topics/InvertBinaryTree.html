@@ -1,0 +1,33 @@
+---
+title: "Invert Binary Tree"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/invert-binary-tree">Invert Binary Tree</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>Think about how you would do the problem on a white board: </p>
+<ul>
+  <li>Fist kind off pick one branch and move to the other and then go down and do the same.</li>
+  <li>Or start from the last branch switch and then go up.</li>
+</ul>
+<p>Irrespective of the method we chose the steps stay the same, do operation and then go to next nodes. Or do switching for other nodes that are children of the current nodes child nodes and then come back and switch child nodes.</p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/InvertBinaryTree.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <!-- <ul style="color: red; font-size: 20px;">
+    <li></li>
+    <li></li>
+  </ul> -->

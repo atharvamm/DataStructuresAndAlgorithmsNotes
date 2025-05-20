@@ -1,0 +1,32 @@
+---
+title: "Two Sum"
+layout: default
+previous: "../blind75/index.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/two-sum/description/">Two Sum</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>
+  Basically the question asks to find two numbers that sum upto the given target. The condition being there are unique solutions and both index cannot be the same.</p><p>
+  Given the condition the first thing we can do is, For each index go through all indices after it and see if any of the combinations add up to the result. If yes, return the solution, else continue. The issue is this solution will be very expensive.</p><p>
+  The solution, use a dictionary to see if the required number has already occured before. The idea is, whenever we might have to check the list to see if some number of or object has been seen in the past instead of going through the list again, we store the element in the hashmap. So basically we store the required key and useful value.</p><p>
+  Now as we go to the next element we would have already stored the useful information in the dictionary and in the future if we need it we can use the dictionary to get the correct value.
+</p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/TwoSum.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>Whenever we face a problem where we might need an event or value later, store the value in a dictionary so that you will not have to iterate through the array to see if the event happened in the past.</li>
+  </ul>
