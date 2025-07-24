@@ -16,7 +16,7 @@ sidebar: |
 <h1 id="intro"><a href="https://leetcode.com/problems/linked-list-cycle">Linked List Cycle</a></h1>
 <h2 id="approach">Approach</h2>
 
-<p>Again for this method we have two approaches
+<p>Again for this problem we have two approaches
 <ul>
   <li>Go through the linked list and store elements in a set. If we have previously seen the element return True, if we incidentally reach None then no cycle, return False</li>
   <li>The second method is more interesting. It is based on Flloyds tortoise and hare algorithm, here you will have two pointeres. One a first pointer and other a slow pointer. The fast pointer will take n steps more compared to slow pointer. So if the fast pointer at any stage reaches None then we know there is no cycle. On the other hand if both of them meet at a point there is cycle. This algorithm is better cause it removes space needed to store all nodes.</li>

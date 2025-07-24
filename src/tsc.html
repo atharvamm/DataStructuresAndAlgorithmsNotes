@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Notes</title>
+    <link rel="stylesheet" href="../assets/styles.css"> 
+    <!-- MathJax -->
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+    <div id="sidebar">
+        <h2>Contents</h2>
+        <ul>
+            <li><a href="#title">Title</a></li>
+            <li><a href="#content">Content</a></li>
+            <li><a href="#eop">End of Page</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <h1 id="title"><a href="https://www.hackerearth.com/practice/basic-programming/complexity-analysis/time-and-space-complexity/tutorial/">Time & Space Complexity</a></h1>
+        <!-- <p>This section introduces the topic. <a href="#targetWord" class="highlight">Applications</a></p> -->
+        <!-- <div class="image-container">
+            <img src="../files/sc.png" alt="Description of the image" class="responsive-image">
+        </div> -->
+
+        <div class="important">
+            <strong>Key Concept:</strong> Time complexity measures how runtime grows with input size. Space complexity measures how memory usage grows with input size. Both use Big-O notation to describe worst-case scenarios.
+        </div>
+        
+        <h2>Big-O Notation Cheat Sheet</h2>
+        <table>
+            <tr>
+                <th>Complexity</th>
+                <th>Name</th>
+                <th>Example Operations</th>
+                <th>When You See It</th>
+            </tr>
+            <tr>
+                <td>O(1)</td>
+                <td>Constant</td>
+                <td>Array access, arithmetic ops</td>
+                <td>Direct lookups, no loops</td>
+            </tr>
+            <tr>
+                <td>O(log n)</td>
+                <td>Logarithmic</td>
+                <td>Binary search, balanced BST ops</td>
+                <td>Divide and conquer, halving input</td>
+            </tr>
+            <tr>
+                <td>O(n)</td>
+                <td>Linear</td>
+                <td>Linear search, single loops</td>
+                <td>One pass through data</td>
+            </tr>
+            <tr>
+                <td>O(n log n)</td>
+                <td>Linearithmic</td>
+                <td>Merge sort, heap sort</td>
+                <td>Divide and conquer with linear work</td>
+            </tr>
+            <tr>
+                <td>O(n²)</td>
+                <td>Quadratic</td>
+                <td>Bubble sort, nested loops</td>
+                <td>Comparing all pairs</td>
+            </tr>
+            <tr>
+                <td>O(2ⁿ)</td>
+                <td>Exponential</td>
+                <td>Subset generation, recursive Fibonacci</td>
+                <td>Brute force, backtracking</td>
+            </tr>
+            <tr>
+                <td>O(n!)</td>
+                <td>Factorial</td>
+                <td>Permutations, traveling salesman</td>
+                <td>Generating all possible orderings</td>
+            </tr>
+        </table>
+        
+        <h2>Data Structure Complexities</h2>
+        
+        <h3>Arrays/Lists</h3>
+        <ul>
+            <li><strong>Access:</strong> O(1) - direct indexing</li>
+            <li><strong>Search:</strong> O(n) - linear search</li>
+            <li><strong>Insert/Delete at end:</strong> O(1) amortized</li>
+            <li><strong>Insert/Delete at middle:</strong> O(n) - requires shifting</li>
+        </ul>
+        
+        <h3>Linked Lists</h3>
+        <ul>
+            <li><strong>Access:</strong> O(n)</li>
+            <li><strong>Search:</strong> O(n)</li>
+            <li><strong>Insert/Delete at head:</strong> O(1)</li>
+            <li><strong>Insert/Delete at known position:</strong> O(1) (but finding position is O(n))</li>
+        </ul>
+        
+        <h3>Hash Tables (Dictionaries)</h3>
+        <ul>
+            <li><strong>Insert/Delete/Access:</strong> O(1) average case, O(n) worst case (bad hash)</li>
+            <li><strong>Search:</strong> O(1) average, O(n) worst</li>
+        </ul>
+        
+        <h3>Stacks/Queues</h3>
+        <ul>
+            <li><strong>Push/Pop/Peek (Stack):</strong> O(1)</li>
+            <li><strong>Enqueue/Dequeue (Queue):</strong> O(1)</li>
+        </ul>
+        
+        <h3>Trees</h3>
+        <ul>
+            <li><strong>Balanced BST (Access/Search/Insert/Delete):</strong> O(log n)</li>
+            <li><strong>Unbalanced BST (worst case):</strong> O(n)</li>
+            <li><strong>Traversal (all nodes):</strong> O(n)</li>
+        </ul>
+        
+        <h3>Heaps</h3>
+        <ul>
+            <li><strong>Insert/Extract-Min:</strong> O(log n)</li>
+            <li><strong>Find-Min:</strong> O(1)</li>
+            <li><strong>Heapify:</strong> O(n)</li>
+        </ul>
+        
+        <h2>Algorithm Complexities</h2>
+        
+        <h3>Sorting Algorithms</h3>
+        <table>
+            <tr>
+                <th>Algorithm</th>
+                <th>Time (Best)</th>
+                <th>Time (Average)</th>
+                <th>Time (Worst)</th>
+                <th>Space</th>
+            </tr>
+            <tr>
+                <td>Bubble Sort</td>
+                <td>O(n)</td>
+                <td>O(n²)</td>
+                <td>O(n²)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Insertion Sort</td>
+                <td>O(n)</td>
+                <td>O(n²)</td>
+                <td>O(n²)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Selection Sort</td>
+                <td>O(n²)</td>
+                <td>O(n²)</td>
+                <td>O(n²)</td>
+                <td>O(1)</td>
+            </tr>
+            <tr>
+                <td>Merge Sort</td>
+                <td>O(n log n)</td>
+                <td>O(n log n)</td>
+                <td>O(n log n)</td>
+                <td>O(n)</td>
+            </tr>
+            <tr>
+                <td>Quick Sort</td>
+                <td>O(n log n)</td>
+                <td>O(n log n)</td>
+                <td>O(n²)</td>
+                <td>O(log n)</td>
+            </tr>
+            <tr>
+                <td>Heap Sort</td>
+                <td>O(n log n)</td>
+                <td>O(n log n)</td>
+                <td>O(n log n)</td>
+                <td>O(1)</td>
+            </tr>
+        </table>
+        
+        <h3>Graph Algorithms</h3>
+        <ul>
+            <li><strong>DFS/BFS:</strong> O(V + E) time, O(V) space (V=vertices, E=edges)</li>
+            <li><strong>Dijkstra's (with min-heap):</strong> O((V+E) log V) time, O(V) space</li>
+            <li><strong>Bellman-Ford:</strong> O(VE) time, O(V) space</li>
+            <li><strong>Floyd-Warshall:</strong> O(V³) time, O(V²) space</li>
+            <li><strong>Prim's/Kruskal's (MST):</strong> O(E log V) time, O(V) space</li>
+        </ul>
+        
+        <h2>Interview Strategies</h2>
+        
+        <div class="important">
+            <strong>During Interviews:</strong> Always state your complexity analysis before coding. Explain trade-offs between different approaches.
+        </div>
+        
+        <h3>Step-by-Step Analysis Approach</h3>
+        <ol>
+            <li><strong>Identify input size:</strong> What's "n" in your problem? Array length? Tree nodes?</li>
+            <li><strong>Count operations:</strong> How does the number of operations grow with n?</li>
+            <li><strong>Consider worst case:</strong> What input would make your algorithm perform worst?</li>
+            <li><strong>Drop constants/lower terms:</strong> Focus on dominant terms for Big-O.</li>
+            <li><strong>Space analysis:</strong> Account for auxiliary space (not input storage).</li>
+        </ol>
+        
+        <h3>Common Patterns</h3>
+        <ul>
+            <li><strong>Single loop:</strong> O(n)</li>
+            <li><strong>Nested loops:</strong> O(n²) or O(n*m) if different sizes</li>
+            <li><strong>Divide and conquer:</strong> Often O(n log n)</li>
+            <li><strong>Recursion with branching:</strong> O(branches^depth)</li>
+            <li><strong>Memoization:</strong> Often reduces time complexity at space cost</li>
+        </ul>
+        
+        <div class="example">
+            <h3>Example Problem Analysis</h3>
+            <p><strong>Problem:</strong> Find if two numbers in an array sum to target.</p>
+            
+            <p><strong>Brute Force (nested loops):</strong></p>
+            <ul>
+                <li>Time: O(n²) - check all pairs</li>
+                <li>Space: O(1) - no extra storage</li>
+            </ul>
+            
+            <p><strong>Hash Map Solution:</strong></p>
+            <ul>
+                <li>Time: O(n) - single pass through array</li>
+                <li>Space: O(n) - store complements in hash map</li>
+            </ul>
+            
+            <p><strong>Sorted Array + Two Pointers:</strong></p>
+            <ul>
+                <li>Time: O(n log n) - sorting dominates</li>
+                <li>Space: O(1) or O(n) - depends if we can modify input</li>
+            </ul>
+        </div>
+        
+        <h2>Advanced Considerations</h2>
+        
+        <ul>
+            <li><strong>Amortized analysis:</strong> Some operations may be expensive occasionally but average to O(1) (e.g., dynamic array resizing)</li>
+            <li><strong>Hidden complexities:</strong> Built-in functions may have non-obvious costs (e.g., string concatenation in loops can be O(n²))</li>
+            <li><strong>Trade-offs:</strong> Often you can reduce time complexity by increasing space usage (and vice versa)</li>
+            <li><strong>Practical implications:</strong> O(n²) may be fine for small n, but terrible for large datasets</li>
+        </ul>
+        
+        <h2>Common Mistakes</h2>
+        
+        <ul>
+            <li>Confusing average-case and worst-case complexities</li>
+            <li>Ignoring space complexity of recursive calls (call stack space)</li>
+            <li>Overlooking the complexity of helper functions</li>
+            <li>Assuming O(1) for hash operations without considering collision handling</li>
+            <li>Not considering the complexity of pre-processing steps</li>
+        </ul>
+        
+        <div class="important">
+            <strong>Final Tip:</strong> Practice analyzing complexity for every LeetCode problem you solve, even after you've found a solution. This builds intuition for interviews.
+        </div>
+
+
+        <!-- <h2 id="section2">Theory</h2>
+        <p>Here is some theory. The quadratic formula is given by:</p>
+        <p>Here is some theory. The quadratic formula is given by:</p>
+        <p>Here is some theory. The quadratic formula is given by:</p>
+        <p>\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</p>
+
+        <h2 id="section2">Theory</h2>
+        <p>Here is some theory. The quadratic formula is given by:</p>
+        <p>Here is some theory. The quadratic formula is given by:</p>
+        <p>Here is some theory. The quadratic formula is given by:</p>
+        <p>\[ x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a} \]</p>
+
+        <h2 id="section3">Applications</h2>
+        <p>Applications of the theory in real life. <span id="targetWord" class="special-highlight">specific applications</span></p> -->
+
+        <!-- <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+            <button onclick="location.href='../src/test/index.html'">Previous</button> -->
+        <!-- </div> -->
+
+
+        <!-- End of Page -->
+        <h4 id="eop" style="text-align: center; margin-top: 30px;">End of Page</h2>
+        <!-- Nav Buttons -->
+        <div class="nav-buttons" style="display: flex; justify-content: space-between;">
+        <button onclick="location.href='../index.html'">Previous</button>
+        <button onclick="location.href='../index.html'">Next</button>
+        </div>
+
+        <!-- Home Button -->
+        <div class="home-button" style="text-align: center; margin-top: 30px;">
+            <button onclick="location.href='../index.html'">Home</button>
+        </div>
+
+    </div>
+</body>
+</html>
+
+
+

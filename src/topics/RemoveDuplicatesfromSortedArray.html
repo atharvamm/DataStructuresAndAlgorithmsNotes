@@ -1,0 +1,30 @@
+---
+title: "Remove Duplicates from Sorted Array"
+layout: default
+previous: "../theory.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/">Remove Duplicates from Sorted Array</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>When thinking about this problem the two most obvious appraoches that come to mind are using python set and then sorting it. </p>
+<p>A more optimized approach takes into account the information that the list is already sorted, and the constraint that we need to do this operation in place. In this case the only way to do that is to have something look forward and then come back and upload the list. Like some variable to go and look at all unique elements and then come back and update. To make thi more efficient we dont need to collect but rather just update on the fly done, thats the answer.</p>
+<p></p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/RemoveDuplicatesfromSortedArray.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li> I think this trick heavily relies on us knowing when to use fast point and slow pointer. Instead of that we can focus on just knowing use 2 pointer here. </li>
+    <li></li>
+  </ul>

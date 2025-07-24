@@ -1,0 +1,30 @@
+---
+title: "Rotate Array"
+layout: default
+previous: "../theory.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/rotate-array/description/">Rotate Array</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>Rotation is essentially removing from one end and adding from another. A simpe method of doing this would be to use pop, which returns/removes the last element from the array and then use insert to add it to the appropriate index.</p>
+<p>An issue with the pop, insert method is. Everytime we add an element we waste time moving all elements by one place. Instead we can use a store array to store all elements that needed to be added to the beginning of the array in one place and focus on moving the elements. Once we move the elements we can use the store add the elements to the beginning of the array. This way we only move the elements once.</p>
+<p>There is another approach, which is optimal but not super intuitive. </p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/RotateArray.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>After figuring out the brute force solution, see if there is any way you can reduce the number of operations in brute force, like here taking mod of k reduces operations when k > len of array.</li>
+    <li></li>
+  </ul>

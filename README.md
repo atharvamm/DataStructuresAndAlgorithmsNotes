@@ -1,3 +1,3 @@
 # Data Structures And Algorithms
 
-Start here: [Index](index.html)
+Start here: [Index](https://atharvamm.github.io/DataStructuresAndAlgorithmsNotes/)

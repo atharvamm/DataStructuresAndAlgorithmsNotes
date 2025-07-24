@@ -1,0 +1,28 @@
+---
+title: "Move Zeroes"
+layout: default
+previous: "../theory.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://leetcode.com/problems/move-zeroes/description/">Move Zeroes</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>Trivial approach, first go through array and find all non zero elements and store them for later use. Then go through array again and all elements one by one. Fill remaining spots with zero.</p>
+<p>We can use two pointer to avoid storing an extra array. We can have slow pointer which only updates on non - zero element and fast pointer which updates to go through the array. Once fast pointer reaches end of list, we use slow pointer to fill remaining elements in list with 0.</p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/MoveZeroes.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>A good indicator for two pointer usually is when we store elements for later use. The idea then is to split between fast and slow pointer where we use fast pointer to go through array and slow pointer to update. </li>
+  </ul>

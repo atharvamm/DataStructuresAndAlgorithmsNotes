@@ -1,8 +1,8 @@
 # Directories
 _site/*
 .jekyll-cache/
-**/**/store/
+**/**/store
 .vscode/*
 
 # Files
-
+**/**/*.yaml

@@ -189,3 +189,21 @@ def printTable(a):
             print(a[i][j],end = " ")
         print()
 '''
+
+
+### TimeIt
+import time
+from functools import wraps
+
+def timeit(precision=4):  # this is the outermost decorator factory
+    def decorator(func):  # this is the actual decorator
+        @wraps(func)
+        def wrapper(*args, **kwargs):  # this wraps the target function
+            start = time.time()
+            result = func(*args, **kwargs)
+            end = time.time()
+            elapsed = end - start
+            print(f"{func.__name__} took {elapsed:.{precision}f} seconds")
+            return result
+        return wrapper
+    return decorator
