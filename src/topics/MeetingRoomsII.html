@@ -1,0 +1,32 @@
+---
+title: "Meeting Rooms II"
+layout: default
+previous: "../blind75.html"
+next: "../../../index.html"
+sidebar: |
+  <h2>Contents</h2>
+  <ul>
+    <li><a href="#intro">Question</a></li>
+    <li><a href="#approach">Approach</a></li>
+    <li><a href="#code">Code</a></li>
+  </ul>
+---
+
+
+<h1 id="intro"><a href="https://www.lintcode.com/problem/919/">Meeting Rooms II</a></h1>
+<h2 id="approach">Approach</h2>
+
+<p>The solution to this question lies in the fact that you need more meeting rooms when meeting rooms are occupied at the same time. You can check this by checking if the start time of the new meeting is before the current meeting ends.</p>
+<p>Brute: We can maintain a list of rooms. Everytime we have a new reservation comapre it against the rooms that are already there in the meeting list and then make a call whether we need a new room or not. The idea is if any rooms meeting has already ended add the new reservations end time there and continue.</p>
+<p>Non - Brute : An issue with the brute force approach is as the number of rooms increases, we will spend time going through each room. One thing we can do to optimize this, is, that when we add elements we can add them to the correct position in a sorted list so later we can quickly add and element in logn time and find the meeting room where the reservation might be about to end in O1 time since it is always going to be the first element of this sorted list. An alternate to this sorted list is min-heap, by having a min-heap we dont need to worry about maintaining this list.</p>
+<p></p>
+
+<h2 id="code">Code</h2>
+{% include code.html file="code/MeetingRoomsII.py" %}
+
+<h2 style="color: red;">Main Ideas<h2>
+  <ul style="color: red; font-size: 20px;">
+    <li>Interval questions, always look at the end time of current/stored vs start time of new interval.</li>
+    <li>Definitely sorting by start time helps, and then imagine a timeline in your head and how to use it.</li>
+    <li>Also when we have to maintain multiple elements in sorted order a heap helps.</li>
+  </ul>

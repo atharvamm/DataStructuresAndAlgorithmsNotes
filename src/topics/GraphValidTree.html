@@ -1,5 +1,5 @@
 ---
-title: "Maximum Product Subarray"
+title: "Graph Valid Tree"
 layout: default
 previous: "../blind75.html"
 next: "../../../index.html"
@@ -13,19 +13,19 @@ sidebar: |
 ---
 
 
-<h1 id="intro"><a href="https://leetcode.com/problems/maximum-product-subarray/description/">Maximum Product Subarray</a></h1>
+<h1 id="intro"><a href="https://www.lintcode.com/problem/178/">Graph Valid Tree</a></h1>
 <h2 id="approach">Approach</h2>
 
-<p></p>
-<p></p>
+<p>What this problem asks from us is to confirm if the given graph is a valid tree. Since trees are essentially graphs without loops, the solution involves looking for loops.</p>
+<p>This can be done by getting child nodes for each nodes using edge information. Once we have node and children info, all we have to do is just go to each node and start from there to see if we can come back to a node already seen.</p>
 <p></p>
 <p></p>
 
 <h2 id="code">Code</h2>
-{% include code.html file="code/MaximumProductSubarray.py" %}
+{% include code.html file="code/GraphValidTree.py" %}
 
 <h2 style="color: red;">Main Ideas<h2>
   <ul style="color: red; font-size: 20px;">
-    <li></li>
-    <li></li>
+    <li>Trees means no cyclic loops.</li>
+    <li>Remember DFS means keep doing recurse, BFS means store in queue and then pop</li>
   </ul>
